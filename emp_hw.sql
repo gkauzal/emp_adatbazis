@@ -47,7 +47,9 @@ delimiter ;
 call last_dept(10010);
 
 -- 7. feladat
-select count(emp_no) from salaries where to_date-from_date>365 and salary>100000;
+select count(datediff(to_date, from_date )) as num_of_conts from salaries
+    where salary > 100000 and
+    datediff(to_date, from_date ) > 365;
 
 -- 8. feladat
 use employees;
